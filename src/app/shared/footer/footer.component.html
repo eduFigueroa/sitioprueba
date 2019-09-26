@@ -9,7 +9,7 @@
           <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact</a>
           </li> -->
         </ul>
-        <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}} SODAPARR </span>Todos los derechos reservados</p>
+        <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}} {{infoPaginaService.info.titulo}} </span>Todos los derechos reservados</p>
       </div>
       <div class="ae-grid__item item-lg-4 au-xs-ta-center"><a href="#0" class="rk-social-btn ">
           <svg>
@@ -20,12 +20,14 @@
           </svg></a><a href="#0" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
+          </svg></a>
+          
+          <a target="_blank" [href]="infoPaginaService.info.tumblr" class="rk-social-btn ">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-tumblr"></use>
           </svg></a></div>
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
-        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a href="#0" class="rk-dark-color ">contacto@sodaparr.cl </a></span></p>
+        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a href="#0" class="rk-dark-color ">{{infoPaginaService.info.email}} </a></span></p>
         <p class="rk-footer__text rk-footer__by">Creador por <a href="" class="ae-u-bolder">ControlV</a></p>
       </div>
     </div>
