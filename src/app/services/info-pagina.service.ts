@@ -8,23 +8,41 @@ import { InfoPagina } from '../interfaces/info-pagina.interfaces';
 export class InfoPaginaService {
 
   info:InfoPagina={};
-
   cargada = false;
+
+  equipo: any[] = [];
 
   constructor(private http: HttpClient) { 
 
-    console.log('servicio de infopagina listo');
+  this.cargarInfo();
+  this.cargarEquipo();
+    
 
-    //leer el archivo JSON y tomar sus propiedades para ser leido en las paginas
+     }
 
-    this.http.get('assets/data/data-pagina.json')
+     private cargarInfo(){
+//leer el archivo JSON y tomar sus propiedades para ser leido en las paginas
+      this.http.get('assets/data/data-pagina.json')
       .subscribe((resp: InfoPagina) => {
 
         this.cargada = true;
         this.info = resp;
-        console.log(resp.email);
+   
 
-       }
-      )
+       });
      }
+
+     private cargarEquipo(){
+
+      this.http.get('https://dotcl-sodaparr.firebaseio.com/equipo.json')
+      .subscribe((resp: any[]) => {
+
+        this.equipo  =resp;
+        console.log(resp);
+      });
+
+     }
+
+
+
   }
