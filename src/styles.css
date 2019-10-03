@@ -76,3 +76,8 @@
     -webkit-animation-name: rollIn;
     animation-name: rollIn;
   }
+
+  svg path,
+svg rect{
+  fill: black;
+}
